@@ -3089,7 +3089,7 @@ export const SparklineAreaData = [
   { x: 4, yval: 5 },
   { x: 5, yval: 10 },
 
-];
+]; 
 
 export const lineCustomSeries = [
   { dataSource: lineChartData[0],
