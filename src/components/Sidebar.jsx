@@ -15,7 +15,7 @@ const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md 
 
 const Sidebar = () => {
 
-  const { activeMenu, setActiveMenu, screenSize } = useStateContext()
+  const { activeMenu, setActiveMenu, screenSize, currentColor } = useStateContext()
 
 const handleCloseSideBar = () =>{
   if(activeMenu && screenSize <= 900){
@@ -48,8 +48,11 @@ const handleCloseSideBar = () =>{
                 <NavLink to={`/${link.name}`}
                   key={link.name}
                   onClick={handleCloseSideBar }
+
+                  style={({ isActive }) => ({ backgroundColor: isActive ?  currentColor : ''})}
+
                   className={({ isActive }) => isActive ? activeLink : normalLink}
-                >
+                > 
                   {link.icon}
                   <span className='capitalize' >{link.name}</span>
                 </NavLink>
